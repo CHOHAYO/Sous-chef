@@ -1,6 +1,6 @@
 import React, { useState, useRef, KeyboardEvent, ChangeEvent } from 'react';
 import { Plus, X, Search, Camera, Loader2, Sparkles, ChefHat } from './Icons';
-import { extractIngredientsFromImage } from '../services/geminiService';
+import { analyzeImage } from '../services/apiService';
 import { DifficultyLevel } from '../types';
 
 interface IngredientInputProps {
@@ -59,7 +59,7 @@ const IngredientInput: React.FC<IngredientInputProps> = ({
         const base64Data = base64String.split(',')[1];
         
         try {
-          const extractedIngredients = await extractIngredientsFromImage(base64Data);
+          const extractedIngredients = await analyzeImage(base64Data);
           const newIngredients = Array.from(new Set([...ingredients, ...extractedIngredients]));
           setIngredients(newIngredients);
         } catch (error) {

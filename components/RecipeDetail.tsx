@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Recipe } from '../types';
 import { Clock, Flame, X, Sparkles, ChefHat, Plus, Loader2, Camera } from './Icons';
-import { generateRecipeImage } from '../services/geminiService';
+import { getRecipeImage } from '../services/apiService';
 
 interface RecipeDetailProps {
   recipe: Recipe;
@@ -15,7 +15,7 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe, onClose }) => {
   const handleGenerateImage = async () => {
     setIsGeneratingImage(true);
     try {
-      const imageUrl = await generateRecipeImage(recipe.name, recipe.description);
+      const imageUrl = await getRecipeImage(recipe.name, recipe.description);
       if (imageUrl) {
         setGeneratedImage(imageUrl);
       }

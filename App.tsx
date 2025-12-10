@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import IngredientInput from './components/IngredientInput';
 import RecipeCard from './components/RecipeCard';
 import RecipeDetail from './components/RecipeDetail';
-import { generateRecipes } from './services/geminiService';
+import { getRecipes } from './services/apiService';
 import { Recipe, DifficultyLevel } from './types';
 import { ChefHat, Sparkles } from './components/Icons';
 
@@ -29,7 +29,7 @@ const App: React.FC = () => {
     setError(null);
     setRecipes([]);
     try {
-      const result = await generateRecipes(ingredients, difficulty);
+      const result = await getRecipes(ingredients, difficulty);
       setRecipes(result.recipes);
     } catch (e) {
       console.error(e);
