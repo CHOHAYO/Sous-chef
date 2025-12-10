@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Cuisine de Rêve</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Pretendard:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Pretendard', sans-serif;
+        background-color: #FDFBF7;
+      }
+      h1, h2, h3, .serif-font {
+        font-family: 'Nanum Myeongjo', serif;
+      }
+      .playfair {
+        font-family: 'Playfair Display', serif;
+      }
+      .garamond {
+        font-family: 'Cormorant Garamond', serif;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D4B0B5;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #B76E79;
+      }
+      .texture-paper {
+        background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'dior-gray': {
+                50: '#F9FAFB',
+                100: '#F3F4F6',
+                200: '#E5E7EB',
+                300: '#D1D5DB',
+                400: '#9CA3AF',
+                500: '#6B7280',
+                900: '#111827',
+              },
+              'rose-gold': {
+                50: '#FDF2F4',
+                100: '#FCE7EB',
+                200: '#F8CED6',
+                300: '#F2Aeb9',
+                400: '#E68A9B',
+                500: '#B76E79', 
+                600: '#A0525E',
+                900: '#6D2E38',
+              },
+              'gold': {
+                100: '#FBF5E5',
+                200: '#F3E5AB',
+                300: '#E6C87C',
+                400: '#C5A059',
+                500: '#B8860B', 
+                900: '#7B5E20',
+              },
+              'charcoal': '#2C2C2C',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.8s ease-out',
+              'slide-up': 'slideUp 0.8s ease-out',
+              'shimmer': 'shimmer 2s linear infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(30px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.32.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#FDFBF7] text-charcoal antialiased selection:bg-rose-gold-200 selection:text-charcoal texture-paper">
+    <div id="root"></div>
+  </body>
+</html>

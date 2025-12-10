@@ -1,0 +1,7 @@
+{
+  "name": "Copy of La Cuisine de Rêve",
+  "description": "냉장고 속 재료로 만드는 우아하고 감각적인 레시피 추천 서비스",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
