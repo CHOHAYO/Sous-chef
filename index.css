@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Tailwind v4 theme tokens for custom fonts/colors/animations */
+@theme {
+  /* Fonts */
+  --font-playfair: "Playfair Display", serif;
+  --font-garamond: "Garamond", serif;
+  --font-serif: "Georgia", serif;
+
+  /* Colors */
+  --color-rose-gold-50: #fef8f6;
+  --color-rose-gold-100: #fdf1ed;
+  --color-rose-gold-200: #fce3db;
+  --color-rose-gold-300: #fad5c9;
+  --color-rose-gold-400: #f7b8a5;
+  --color-rose-gold-500: #f39b81;
+  --color-rose-gold-600: #e07d63;
+  --color-rose-gold-700: #d66849;
+  --color-rose-gold-800: #b84a31;
+  --color-rose-gold-900: #9a3827;
+
+  --color-gold-50: #fffbf0;
+  --color-gold-100: #fff8e1;
+  --color-gold-200: #ffede6;
+  --color-gold-300: #ffe2cc;
+  --color-gold-400: #ffd099;
+  --color-gold-500: #ffbe66;
+  --color-gold-600: #ffb347;
+  --color-gold-700: #ff9500;
+  --color-gold-800: #cc7700;
+  --color-gold-900: #995500;
+
+  --color-dior-gray-50: #fafafa;
+  --color-dior-gray-100: #f5f5f5;
+  --color-dior-gray-200: #e8e8e8;
+  --color-dior-gray-300: #d4d4d4;
+  --color-dior-gray-400: #a8a8a8;
+  --color-dior-gray-500: #7c7c7c;
+  --color-dior-gray-600: #636363;
+  --color-dior-gray-700: #4a4a4a;
+  --color-dior-gray-800: #323232;
+  --color-dior-gray-900: #1a1a1a;
+
+  --color-charcoal: #2a2a2a;
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.8s ease-out;
+  --animate-slide-up: slideUp 0.8s ease-out;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+}
+
+/* Custom styles */
+@layer components {
+  .playfair {
+    @apply font-playfair;
+  }
+  
+  .garamond {
+    @apply font-garamond;
+  }
+}

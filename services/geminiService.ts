@@ -1,7 +1,16 @@
+/**
+ * [Frontend Developer Note]
+ * 이 파일은 현재 USE_MOCK_SERVER가 false일 때는 사용되지 않습니다.
+ * API 연동 시: apiService.ts가 백엔드 API를 호출합니다.
+ * 
+ * 필요시 로컬 테스트를 위해 apiService.ts의 config.ts에서
+ * USE_MOCK_SERVER를 true로 설정하면 이 함수들을 사용할 수 있습니다.
+ */
+
 import { GoogleGenAI, Type } from "@google/genai";
 import { GeneratedRecipes, DifficultyLevel } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 // 이미지에서 식재료 추출
 export const extractIngredientsFromImage = async (base64Image: string): Promise<string[]> => {
@@ -48,6 +57,7 @@ export const extractIngredientsFromImage = async (base64Image: string): Promise<
     throw new Error("이미지를 분석하는 데 실패했습니다.");
   }
 };
+
 
 // 레시피 생성 (창의적이고 우아한 요리)
 export const generateRecipes = async (ingredients: string[], difficulty: DifficultyLevel): Promise<GeneratedRecipes> => {
